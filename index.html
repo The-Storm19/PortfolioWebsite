@@ -1,136 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Analiese Schreier — Graphic Design & Photography</title>
-<meta name="description" content="Insert short bio here">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analiese Schreier — Graphic Design & Photography</title>
+  <link rel="icon" type="image/x-icon" href="favicon.png">
+  <meta name="description" content="Insert short bio here">
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<header class="site-header">
-  <div class="wrap">
-    <a class="brand" href="index.html">Analiese<span>·</span>Schreier</a>
-    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-      <span></span>
-    </button>
-    <nav class="primary-nav" aria-label="Primary">
-      <ul>
-        <li><a href="index.html" aria-current="page">Home</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="graphic-design.html">Graphic Design</a></li>
-        <li><a href="photographic-design.html">Photography</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <!-- TODO: replace with your own line -->
-        <span class="eyebrow-num">Flavor Text</span>
-        <h1 class="h-display">Catchphrase</h1>
-      </div>
-      <div>
-        <!-- TODO: replace with your own bio -->
-        <p class="lede">Insert longer bio here</p>
-        <p><a class="text-link" href="about.html">More about me</a></p>
-      </div>
-    </div>
-  </section>
-
-  <section class="gallery-section hairline-top">
+  <header class="site-header">
     <div class="wrap">
-      <div class="section-head">
-        <h2 class="h-section">Selected work</h2>
-        <a class="text-link" href="portfolio.html">Full portfolio</a>
-      </div>
-      <!-- Populated automatically from Graphic Design/config.js and
-           Photography/config.js — edit those files to change what
-           shows up here. -->
-      <div class="gallery-grid" id="home-gallery"></div>
-    </div>
-  </section>
-
-  <section class="hairline-top">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 class="h-section">What the studio does</h2>
-      </div>
-      <div class="discipline-list">
-        <div class="discipline-row">
-          <span class="num">01</span>
-          <h3>Identity &amp; branding</h3>
-          <p class="discipline-desc">Marks, type systems, and guidelines for
-          galleries, foundries, publishers, and small labels.</p>
-        </div>
-        <div class="discipline-row">
-          <span class="num">02</span>
-          <h3>Editorial &amp; print</h3>
-          <p class="discipline-desc">Layout and print production for
-          independent publishers and small print runs.</p>
-        </div>
-        <div class="discipline-row">
-          <span class="num">03</span>
-          <h3>Photography</h3>
-          <p class="discipline-desc">Documentary and studio work, shot for
-          clients and for personal projects.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-grid">
-      <div>
-        <h5>About &amp; Contact</h5>
+      <a class="brand" href="index.html">Analiese<span>·</span>Schreier</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+      </button>
+      <nav class="primary-nav" aria-label="Primary">
         <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Work</h5>
-        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
           <li><a href="graphic-design.html">Graphic Design</a></li>
           <li><a href="photographic-design.html">Photography</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
-      </div>
-      <div>
-        <h5>Elsewhere</h5>
-        <ul>
-          <li><a href="mailto:Schreier.Analiese@gmail.com">Email</a></li>
-          <li><a href="https://www.linkedin.com/in/analiese-schreier-119aab394">LinkedIn</a></li>
-        </ul>
-      </div>
+      </nav>
     </div>
-    <div class="footer-base">
-      <span>© 2026 Analiese Schreier</span>
-    </div>
-  </div>
-</footer>
+  </header>
 
-<script src="Graphic%20Design/config.js"></script>
-<script src="Photography/config.js"></script>
-<script src="script.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var container = document.getElementById('home-gallery');
-    var graphic = (window.GRAPHIC_DESIGN_ITEMS || []).slice(0, 3);
-    var photo = (window.PHOTOGRAPHY_ITEMS || []).slice(0, 3);
-    renderGalleryItems(graphic, 'Graphic Design', container, { type: 'graphic' });
-    renderGalleryItems(photo, 'Photography', container, { type: 'photo' });
-  });
-</script>
+  <main>
+
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <!-- TODO: replace with your own line -->
+          <span class="eyebrow-num">Flavor Text</span>
+          <h1 class="h-display">Catchphrase</h1>
+        </div>
+        <div>
+          <!-- TODO: replace with your own bio -->
+          <p class="lede">Insert longer bio here</p>
+          <p><a class="text-link" href="about.html">More about me</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery-section hairline-top">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 class="h-section">Selected work</h2>
+          <a class="text-link" href="portfolio.html">Full portfolio</a>
+        </div>
+        <!-- Populated automatically from Graphic Design/config.js and
+           Photography/config.js — edit those files to change what
+           shows up here. -->
+        <div class="gallery-grid" id="home-gallery"></div>
+      </div>
+    </section>
+
+    <section class="hairline-top">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 class="h-section">What the studio does</h2>
+        </div>
+        <div class="discipline-list">
+          <div class="discipline-row">
+            <span class="num">01</span>
+            <h3>Identity &amp; branding</h3>
+            <p class="discipline-desc">Marks, type systems, and guidelines for
+              galleries, foundries, publishers, and small labels.</p>
+          </div>
+          <div class="discipline-row">
+            <span class="num">02</span>
+            <h3>Editorial &amp; print</h3>
+            <p class="discipline-desc">Layout and print production for
+              independent publishers and small print runs.</p>
+          </div>
+          <div class="discipline-row">
+            <span class="num">03</span>
+            <h3>Photography</h3>
+            <p class="discipline-desc">Documentary and studio work, shot for
+              clients and for personal projects.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <h5>About &amp; Contact</h5>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Work</h5>
+          <ul>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="graphic-design.html">Graphic Design</a></li>
+            <li><a href="photographic-design.html">Photography</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Elsewhere</h5>
+          <ul>
+            <li><a href="mailto:Schreier.Analiese@gmail.com">Email</a></li>
+            <li><a href="https://www.linkedin.com/in/analiese-schreier-119aab394">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-base">
+        <span>© 2026 Analiese Schreier</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="Graphic%20Design/config.js"></script>
+  <script src="Photography/config.js"></script>
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var container = document.getElementById('home-gallery');
+      var graphic = (window.GRAPHIC_DESIGN_ITEMS || []).slice(0, 3);
+      var photo = (window.PHOTOGRAPHY_ITEMS || []).slice(0, 3);
+      renderGalleryItems(graphic, 'Graphic Design', container, { type: 'graphic' });
+      renderGalleryItems(photo, 'Photography', container, { type: 'photo' });
+    });
+  </script>
 </body>
+
 </html>

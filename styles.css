@@ -455,6 +455,17 @@ p{ margin: 0 0 1em; max-width: var(--measure); }
   gap: clamp(2rem, 5vw, 4rem);
   padding: clamp(2rem, 5vw, 3.5rem) 0 clamp(3rem, 6vw, 5rem);
 }
+
+.contact-grid input,
+.contact-grid textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    /* Apply rounded corners */
+    border-radius: 25px; 
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
 @media (max-width: 860px){ .contact-grid{ grid-template-columns: 1fr; } }
 
 .field{ margin-bottom: 1.4rem; }
