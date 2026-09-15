@@ -35,7 +35,21 @@
    ========================================================================= */
 
 window.GRAPHIC_DESIGN_ITEMS = [
-  {
+ {
+    file: "logo-Black",
+    name: "Private Logo",
+    date: "2025",
+    short: "A one- or two-sentence description of the project goes here.",
+    long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
+  },
+{
+    file: "Fairy Dust-Lable",
+    name: "Branding",
+    date: "2024",
+    short: "A one- or two-sentence description of the project goes here.",
+    long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
+  },
+ {
     file: "Analiese.jpg",
     name: "A Resting Doe",
     date: "2026",
@@ -45,28 +59,28 @@ window.GRAPHIC_DESIGN_ITEMS = [
   {
     file: "charactures in conflict.jpg",
     name: "Rocky?",
-    date: "2026",
+    date: "2025",
     short: "A one- or two-sentence description of the project goes here.",
     long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
   },
   {
     file: "Final.jpg",
     name: "African Woman with Tea",
-    date: "2026",
+    date: "2025",
     short: "A one- or two-sentence description of the project goes here.",
     long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
   },
   {
     file: "Final02.jpg",
     name: "African Woman with Mortar and Pestle",
-    date: "2026",
+    date: "2025",
     short: "A one- or two-sentence description of the project goes here.",
     long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
   },
   {
     file: "Series_2.jpg",
     name: "African Woman Carrying Water",
-    date: "2026",
+    date: "2025",
     short: "A one- or two-sentence description of the project goes here.",
     long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
   }
