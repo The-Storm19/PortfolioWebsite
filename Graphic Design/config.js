@@ -104,7 +104,7 @@ window.GRAPHIC_DESIGN_ITEMS = [
     date: "2026",
     short: "A illustrations to show the atmospheric depth of the woods.",
     long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
-  }
+  },
 {
     file: "Analiese Schreier - Magazine!.pdf",
     name: "Magazine Mockup",
