@@ -57,7 +57,7 @@ window.GRAPHIC_DESIGN_ITEMS = [
     long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
   },
 {
-    file: "Fairy Dust-Lable.pdf",
+    file: "Fairy Dust-Lable.jpg",
     name: "Branding",
     date: "2024",
     short: "A Fairytale product I illustrated and designed.",
@@ -99,14 +99,14 @@ window.GRAPHIC_DESIGN_ITEMS = [
     long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
   },
 {
-    file: "AtmosphericDepth.pdf",
+    file: "AtmosphericDepth.jpg",
     name: "Atmospheric Depth",
     date: "2026",
     short: "A illustrations to show the atmospheric depth of the woods.",
     long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
   },
 {
-    file: "Analiese Schreier - Magazine!.pdf",
+    file: "Analiese Schreier - Magazine!.jpg",
     name: "Magazine Mockup",
     date: "2025",
     short: "A Magazine Focused on my life.",
