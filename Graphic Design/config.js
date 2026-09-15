@@ -35,53 +35,88 @@
    ========================================================================= */
 
 window.GRAPHIC_DESIGN_ITEMS = [
- {
-    file: "logo-Black",
-    name: "Private Logo",
-    date: "2025",
-    short: "A one- or two-sentence description of the project goes here.",
+{
+    file: "LAMBEIN_Competition.PNG",
+    name: "Branding",
+    date: "2026",
+    short: "This logo won a completion for my university Dorm sweatshirt competition.",
     long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
   },
 {
-    file: "Fairy Dust-Lable",
+    file: "V&B_Logo.png",
+    name: "Branding",
+    date: "2026",
+    short: "A logo for a young adults group called Vine and Branches.",
+    long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
+  },
+ {
+    file: "logo-Black.png",
+    name: "Private Logo",
+    date: "2025",
+    short: "A logo designed for a private company.",
+    long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
+  },
+{
+    file: "Fairy Dust-Lable.pdf",
     name: "Branding",
     date: "2024",
-    short: "A one- or two-sentence description of the project goes here.",
+    short: "A Fairytale product I illustrated and designed.",
     long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
   },
  {
     file: "Analiese.jpg",
     name: "A Resting Doe",
     date: "2026",
-    short: "A one- or two-sentence description of the project goes here.",
+    short: "Illustration of a young dow made out of color blocking.",
     long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
   },
   {
     file: "charactures in conflict.jpg",
-    name: "Rocky?",
+    name: "Characters in Conflict",
     date: "2025",
-    short: "A one- or two-sentence description of the project goes here.",
+    short: "An illustration ment to imply strife.",
     long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
   },
   {
     file: "Final.jpg",
     name: "African Woman with Tea",
     date: "2025",
-    short: "A one- or two-sentence description of the project goes here.",
+    short: "A set of illustrations used as a set to show the culture of a small village in Senegal.",
     long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
   },
   {
     file: "Final02.jpg",
     name: "African Woman with Mortar and Pestle",
     date: "2025",
-    short: "A one- or two-sentence description of the project goes here.",
+    short: "A set of illustrations used as a set to show the culture of a small village in Senegal.",
     long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
   },
   {
     file: "Series_2.jpg",
     name: "African Woman Carrying Water",
     date: "2025",
-    short: "A one- or two-sentence description of the project goes here.",
+    short: "A set of illustrations used as a set to show the culture of a small village in Senegal.",
+    long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
+  },
+{
+    file: "AtmosphericDepth.pdf",
+    name: "Atmospheric Depth",
+    date: "2026",
+    short: "A illustrations to show the atmospheric depth of the woods.",
+    long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
+  }
+{
+    file: "Analiese Schreier - Magazine!.pdf",
+    name: "Magazine Mockup",
+    date: "2025",
+    short: "A Magazine Focused on my life.",
+    long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
+  },
+{
+    file: "HardCider.png",
+    name: "Illustration for branding",
+    date: "2026",
+    short: "This illustration was used for product label.",
     long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
   }
 ];
