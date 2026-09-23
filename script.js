@@ -102,17 +102,12 @@ function renderGalleryItems(items, folder, container, options) {
       body.appendChild(short);
     }
 
-    if (item.long) {
-      var details = document.createElement('details');
-      details.className = 'gallery-more';
-      var summary = document.createElement('summary');
-      summary.textContent = 'Read more';
-      var long = document.createElement('p');
-      long.className = 'caption';
-      long.textContent = item.long;
-      details.appendChild(summary);
-      details.appendChild(long);
-      body.appendChild(details);
+    if (item.long && item.file) {
+      var moreLink = document.createElement('a');
+      moreLink.className = 'text-link gallery-more-link';
+      moreLink.href = 'work.html?folder=' + encodeURIComponent(folder) + '&file=' + encodeURIComponent(item.file);
+      moreLink.textContent = 'Read more';
+      body.appendChild(moreLink);
     }
 
     card.appendChild(body);
@@ -188,6 +183,143 @@ function closeLightbox() {
   if (lightboxReturnFocusTo && typeof lightboxReturnFocusTo.focus === 'function') {
     lightboxReturnFocusTo.focus();
   }
+}
+
+// ---------------------------------------------------------------------
+// Home hero slideshow
+//
+// Cross-fades through the photos listed in photos/config.js behind the
+// static logo on the home page. Each photo is preloaded first, so a
+// missing or misspelled file is quietly skipped rather than flashing a
+// broken image.
+// ---------------------------------------------------------------------
+
+// This variable sets the time each photo stays on screen on the home page before fading to the next photo
+var hangTime = 2500;
+
+document.addEventListener('DOMContentLoaded', function () {
+  var slideshow = document.querySelector('.hero-slideshow');
+  if (!slideshow) return;
+
+  var files = (window.HERO_PHOTOS || []).slice(0, 10);
+  if (!files.length) return;
+
+  var loaded = [];
+  var remaining = files.length;
+
+  files.forEach(function (file) {
+    var probe = new Image();
+    probe.onload = function () { loaded.push(file); settle(); };
+    probe.onerror = function () { settle(); };
+    probe.src = encodeURI('photos/' + file);
+  });
+
+  function settle() {
+    remaining -= 1;
+    if (remaining === 0) startHeroSlideshow(slideshow, loaded);
+  }
+});
+
+function startHeroSlideshow(slideshow, files) {
+  if (!files.length) return;
+
+  files.forEach(function (file, i) {
+    var slide = document.createElement('div');
+    slide.className = 'hero-slide' + (i === 0 ? ' is-active' : '');
+    slide.style.backgroundImage = 'url("' + encodeURI('photos/' + file) + '")';
+    slideshow.insertBefore(slide, slideshow.firstChild);
+  });
+
+  if (files.length < 2) return;
+
+  var slides = slideshow.querySelectorAll('.hero-slide');
+  var current = 0;
+  setInterval(function () {
+    slides[current].classList.remove('is-active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('is-active');
+  }, hangTime);
+}
+
+// ---------------------------------------------------------------------
+// Work detail page (work.html)
+//
+// Reads ?folder= and &file= from the page's own address, finds the
+// matching entry in Graphic Design/config.js or Photography/config.js,
+// and renders the photo, title, date, and long description. This is
+// what a gallery card's "Read more" link points to.
+// ---------------------------------------------------------------------
+function renderWorkDetail() {
+  var container = document.getElementById('work-detail');
+  if (!container) return;
+
+  var params = new URLSearchParams(window.location.search);
+  var folder = params.get('folder') || '';
+  var file = params.get('file') || '';
+
+  var sources = {
+    'Graphic Design': window.GRAPHIC_DESIGN_ITEMS || [],
+    'Photography': window.PHOTOGRAPHY_ITEMS || []
+  };
+
+  var items = sources[folder] || [];
+  var item = null;
+  for (var i = 0; i < items.length; i++) {
+    if (items[i].file === file) { item = items[i]; break; }
+  }
+
+  container.innerHTML = '';
+
+  if (!item) {
+    var missing = document.createElement('p');
+    missing.className = 'lede';
+    missing.textContent = "We couldn't find that project — it may have been renamed or removed.";
+    container.appendChild(missing);
+    return;
+  }
+
+  if (item.name) document.title = item.name + ' — Analiese Schreier';
+
+  var frame = document.createElement('div');
+  frame.className = 'gallery-frame work-detail-frame';
+  var img = document.createElement('img');
+  img.src = encodeURI(folder + '/' + item.file);
+  img.alt = item.name || '';
+  img.addEventListener('error', function () {
+    img.remove();
+    frame.classList.add('gallery-frame--fallback');
+    frame.style.setProperty('--c1', GALLERY_FALLBACK_PAIRS[0][0]);
+    frame.style.setProperty('--c2', GALLERY_FALLBACK_PAIRS[0][1]);
+  });
+  frame.appendChild(img);
+  container.appendChild(frame);
+
+  var body = document.createElement('div');
+  body.className = 'work-detail-body';
+
+  if (item.name) {
+    var heading = document.createElement('h1');
+    heading.className = 'h-section';
+    heading.textContent = item.name;
+    body.appendChild(heading);
+  }
+
+  if (item.date) {
+    var meta = document.createElement('p');
+    meta.className = 'meta';
+    meta.textContent = item.date;
+    body.appendChild(meta);
+  }
+
+  var description = item.long || item.short;
+  if (description) {
+    var desc = document.createElement('p');
+    desc.className = 'lede';
+    desc.textContent = description;
+    body.appendChild(desc);
+  }
+
+  container.appendChild(body);
 }
 
 // ---------------------------------------------------------------------
