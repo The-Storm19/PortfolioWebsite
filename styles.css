@@ -286,7 +286,7 @@ p{ margin: 0 0 1em; max-width: var(--measure); }
 
 .hero-slideshow{
   position: relative;
-  height: min(88vh, 780px);
+  height: min(100vh, 780px);
   min-height: 420px;
   overflow: hidden;
   display: flex;
