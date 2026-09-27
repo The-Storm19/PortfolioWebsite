@@ -195,7 +195,7 @@ function closeLightbox() {
 // ---------------------------------------------------------------------
 
 // This variable sets the time each photo stays on screen on the home page before fading to the next photo
-var hangTime = 2500;
+var hangTime = 5000;
 
 document.addEventListener('DOMContentLoaded', function () {
   var slideshow = document.querySelector('.hero-slideshow');
