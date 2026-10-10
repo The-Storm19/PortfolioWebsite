@@ -106,7 +106,7 @@ window.GRAPHIC_DESIGN_ITEMS = [
     long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
   },
 {
-    file: "Analiese Schreier - Magazine.jpg",
+    file: "AnalieseSchreier-Magazine.jpg",
     name: "Magazine Mockup",
     date: "2025",
     short: "A Magazine Focused on my life.",
