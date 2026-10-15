@@ -33,6 +33,41 @@
 
 window.PHOTOGRAPHY_ITEMS = [
   {
+    file: "IMG_0229.jpg-1.jpg",
+    name: "The Train in the Window",
+    date: "2023",
+    short: "Add a one- or two-sentence description here.",
+    long: "Add the longer description here — this is what shows up when someone clicks \"Read more.\""
+  },
+  {
+    file: "IMG_0673.jpg",
+    name: "Floating Mushroom",
+    date: "2023",
+    short: "Add a one- or two-sentence description here.",
+    long: "Add the longer description here — this is what shows up when someone clicks \"Read more.\""
+  },
+  {
+    file: "IMG_0084.jpg",
+    name: "Bucket in the Dark",
+    date: "2023",
+    short: "Add a one- or two-sentence description here.",
+    long: "Add the longer description here — this is what shows up when someone clicks \"Read more.\""
+  },
+  {
+    file: "IMG_1079.jpg",
+    name: "Macro Milkweed",
+    date: "2023",
+    short: "Add a one- or two-sentence description here.",
+    long: "Add the longer description here — this is what shows up when someone clicks \"Read more.\""
+  },
+  {
+    file: "IMG_1085.jpg",
+    name: "Macro Milkweed",
+    date: "2023",
+    short: "Add a one- or two-sentence description here.",
+    long: "Add the longer description here — this is what shows up when someone clicks \"Read more.\""
+  },
+  {
     file: "glass.1.final.schreier.Analiese.JPG",
     name: "Glass study",
     date: "2026",
@@ -47,16 +82,30 @@ window.PHOTOGRAPHY_ITEMS = [
     long: "Add the longer description here — this is what shows up when someone clicks \"Read more.\""
   },
   {
-    file: "AnalieseSchreier_AlbumCover.jpg",
-    name: "Album cover",
-    date: "2026",
+    file: "IMG_5156-1-3.jpg",
+    name: "Returning with Lunch",
+    date: "2022",
     short: "Add a one- or two-sentence description here.",
     long: "Add the longer description here — this is what shows up when someone clicks \"Read more.\""
   },
   {
-    file: "Schreier.Analiese.Portrate.jpg",
-    name: "Portrait",
-    date: "2026",
+    file: "IMG_5361-1-3.jpg",
+    name: "Sitting in the Waiting",
+    date: "2022",
+    short: "Add a one- or two-sentence description here.",
+    long: "Add the longer description here — this is what shows up when someone clicks \"Read more.\""
+  },
+  {
+    file: "IMG_5724-1-3.jpg",
+    name: "The Wanderer",
+    date: "2022",
+    short: "Add a one- or two-sentence description here.",
+    long: "Add the longer description here — this is what shows up when someone clicks \"Read more.\""
+  },
+  {
+    file: "IMG_5740-1-2.jpg",
+    name: "Dance in the Sand",
+    date: "2022",
     short: "Add a one- or two-sentence description here.",
     long: "Add the longer description here — this is what shows up when someone clicks \"Read more.\""
   }
