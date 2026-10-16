@@ -36,77 +36,77 @@ window.PHOTOGRAPHY_ITEMS = [
     file: "IMG_0229.jpg-1.jpg",
     name: "The Train in the Window",
     date: "2023",
-    short: "Add a one- or two-sentence description here.",
+    short: "Framing the beautiful breaking down of the old world with a decaying window.",
     long: "Add the longer description here — this is what shows up when someone clicks \"Read more.\""
   },
   {
     file: "IMG_0673.jpg",
     name: "Floating Mushroom",
     date: "2023",
-    short: "Add a one- or two-sentence description here.",
+    short: "Studio project that worked with capturing the beauty of nature in a studio environment.",
     long: "Add the longer description here — this is what shows up when someone clicks \"Read more.\""
   },
   {
     file: "IMG_0084.jpg",
     name: "Bucket in the Dark",
     date: "2023",
-    short: "Add a one- or two-sentence description here.",
+    short: "In a class project to photograph the beauty in a rundown beauty sat a bucket in the sun.",
     long: "Add the longer description here — this is what shows up when someone clicks \"Read more.\""
   },
   {
     file: "IMG_1079.jpg",
     name: "Macro Milkweed",
     date: "2023",
-    short: "Add a one- or two-sentence description here.",
+    short: "Studio project that worked with capturing the beauty of nature in a studio environment.",
     long: "Add the longer description here — this is what shows up when someone clicks \"Read more.\""
   },
   {
     file: "IMG_1085.jpg",
     name: "Macro Milkweed",
     date: "2023",
-    short: "Add a one- or two-sentence description here.",
+    short: "Studio project that worked with capturing the beauty of nature in a studio environment.",
     long: "Add the longer description here — this is what shows up when someone clicks \"Read more.\""
   },
   {
     file: "glass.1.final.schreier.Analiese.JPG",
     name: "Glass study",
     date: "2026",
-    short: "Add a one- or two-sentence description here.",
+    short: "A studio lighting final that focused on line quality.",
     long: "Add the longer description here — this is what shows up when someone clicks \"Read more.\""
   },
   {
     file: "IMG_7737.jpg",
     name: "Glasss with Flower",
     date: "2026",
-    short: "Add a one- or two-sentence description here.",
+    short: "A studio lighting final that combined glass and shadow to depict the delicate balance.",
     long: "Add the longer description here — this is what shows up when someone clicks \"Read more.\""
   },
   {
     file: "IMG_5156-1-3.jpg",
     name: "Returning with Lunch",
     date: "2022",
-    short: "Add a one- or two-sentence description here.",
+    short: "A girl returning to her family with their lunch in Senegal.",
     long: "Add the longer description here — this is what shows up when someone clicks \"Read more.\""
   },
   {
     file: "IMG_5361-1-3.jpg",
     name: "Sitting in the Waiting",
     date: "2022",
-    short: "Add a one- or two-sentence description here.",
+    short: "A young boy that was waiting for his turn to see the doctor in rural Senegal.",
     long: "Add the longer description here — this is what shows up when someone clicks \"Read more.\""
   },
   {
     file: "IMG_5724-1-3.jpg",
     name: "The Wanderer",
     date: "2022",
-    short: "Add a one- or two-sentence description here.",
+    short: "A Samba(oldest boy that leads cattle) guiding his donkeys to water.",
     long: "Add the longer description here — this is what shows up when someone clicks \"Read more.\""
   },
   {
     file: "IMG_5740-1-2.jpg",
     name: "Dance in the Sand",
     date: "2022",
-    short: "Add a one- or two-sentence description here.",
+    short: "Senegalese boy teaching foreigners how to dance.",
     long: "Add the longer description here — this is what shows up when someone clicks \"Read more.\""
   }
 ];
