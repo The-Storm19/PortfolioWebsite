@@ -25,8 +25,9 @@
    ========================================================================= */
 
 window.HERO_PHOTOS = [
-  "glass.1.final.schreier.Analiese.JPG",
-  "IMG_7737.jpg",
-  "AnalieseSchreier_AlbumCover.jpg",
-  "Schreier.Analiese.Portrate.jpg"
+  "Book1_Mockup.jpg",
+  "Book2_Mockup.jpg",
+  "LAMBEIN_Competition.PNG",
+  "Sojourn_Logo.jpg",
+  "V&B_Logo.png"
 ];
