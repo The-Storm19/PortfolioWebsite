@@ -36,7 +36,7 @@ window.PHOTOGRAPHY_ITEMS = [
     file: "IMG_0229.jpg-1.jpg",
     name: "The Train in the Window",
     date: "2023",
-    short: "Framing the beautiful breaking down of the old world with a decaying window.",
+    short: "Framing the beautiful breaking dawn of the old world with a decaying window.",
     long: "Add the longer description here — this is what shows up when someone clicks \"Read more.\""
   },
   {
@@ -50,7 +50,7 @@ window.PHOTOGRAPHY_ITEMS = [
     file: "IMG_0084.jpg",
     name: "Bucket in the Dark",
     date: "2023",
-    short: "In a class project to photograph the beauty in a rundown beauty sat a bucket in the sun.",
+    short: "In a class project to photograph the beauty in a rundown building sat a bucket in the sun.",
     long: "Add the longer description here — this is what shows up when someone clicks \"Read more.\""
   },
   {
@@ -99,7 +99,7 @@ window.PHOTOGRAPHY_ITEMS = [
     file: "IMG_5724-1-3.jpg",
     name: "The Wanderer",
     date: "2022",
-    short: "A Samba(oldest boy that leads cattle) guiding his donkeys to water.",
+    short: "A Samba (oldest boy that leads cattle) guiding his donkeys to water.",
     long: "Add the longer description here — this is what shows up when someone clicks \"Read more.\""
   },
   {
