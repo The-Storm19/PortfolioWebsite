@@ -37,49 +37,42 @@
 window.GRAPHIC_DESIGN_ITEMS = [
 {
     file: "LAMBEIN_Competition.PNG",
-    name: "Branding",
+    name: "Hall Brawl Contest Winner",
     date: "2026",
     short: "This logo won a completion for my university Dorm sweatshirt competition.",
     long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
   },
 {
     file: "V&B_Logo.png",
-    name: "Branding",
+    name: "Vine and Branches Logo",
     date: "2026",
     short: "A logo for a young adults group called Vine and Branches.",
     long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
   },
  {
     file: "logo-Black.png",
-    name: "Private Logo",
+    name: "Small Business Branding",
     date: "2025",
     short: "A logo designed for a private company.",
     long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
   },
 {
     file: "Fairy Dust-Lable.jpg",
-    name: "Branding",
+    name: "Fairy Dust Product Design",
     date: "2024",
-    short: "A Fairytale product I illustrated and designed.",
+    short: "Magical fairy dust product for kids tea partys that I illustrated and designed.",
     long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
   },
  {
     file: "Analiese.jpg",
-    name: "A Resting Doe",
+    name: "Screen Printing Shirt Design",
     date: "2026",
     short: "Illustration of a young dow made out of color blocking.",
     long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
   },
   {
-    file: "charactures in conflict.jpg",
-    name: "Characters in Conflict",
-    date: "2025",
-    short: "An illustration ment to imply strife.",
-    long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
-  },
-  {
     file: "Final.jpg",
-    name: "African Woman with Tea",
+    name: "Narrative-Driven Imagery for Flyer",
     date: "2025",
     short: "A set of illustrations used as a set to show the culture of a small village in Senegal.",
     long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
@@ -99,24 +92,24 @@ window.GRAPHIC_DESIGN_ITEMS = [
     long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
   },
 {
-    file: "AtmosphericDepth.jpg",
-    name: "Atmospheric Depth",
-    date: "2026",
-    short: "A illustrations to show the atmospheric depth of the woods.",
-    long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
-  },
-{
-    file: "AnalieseSchreier-Magazine.jpg",
-    name: "Magazine Mockup",
-    date: "2025",
-    short: "A Magazine Focused on my life.",
-    long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
-  },
-{
     file: "HardCider.png",
-    name: "Illustration for branding",
+    name: "Hard Cider Packaging",
     date: "2026",
     short: "This illustration was used for product label.",
+    long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
+  },
+{
+    file: "Book1_Mockup0.25x.jpg",
+    name: "Children's Book Cover Design",
+    date: "2025",
+    short: "A childrens book designed while working for Masthof Press.",
+    long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
+  },
+{
+    file: "Book2_Mockup0.25x.jpg",
+    name: "Children's Book Cover Design",
+    date: "2025",
+    short: "A childrens book designed while working for Masthof Press.",
     long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
   }
 ];
