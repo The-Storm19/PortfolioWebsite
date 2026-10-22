@@ -22,6 +22,11 @@
   --font-display: "Young Serif", serif;
   --font-body: "Bitter", serif;
 
+  /* The one standard frame every thumbnail is drawn in. Change this single
+     value to reshape all of them (e.g. 1 / 1 for square, 4 / 5 for tall).
+     Which part of each photo shows is set per photo in config.js. */
+  --gallery-aspect: 4 / 3;
+
   --measure: 62ch;
   --gutter: clamp(1.25rem, 3vw, 2.5rem);
 }
@@ -378,19 +383,30 @@ p{ margin: 0 0 1em; max-width: var(--measure); }
 
 .gallery-frame{
   position: relative;
+  aspect-ratio: var(--gallery-aspect);
   border: 1px solid var(--ink);
   overflow: hidden;
   background: var(--paper-dim);
 }
 .gallery-frame img{
-  display: block;
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: auto; /* natural aspect ratio — photos are never cropped */
+  height: 100%;
+  object-fit: cover; /* same frame for every photo; crop is set per photo in config.js */
 }
 .gallery-frame--fallback{
-  aspect-ratio: 4 / 3; /* only used when there's no real image to size against */
   background: linear-gradient(155deg, var(--c1, var(--developer)) 0%, var(--c2, var(--ink)) 100%);
 }
+
+/* Detail ("Read more") pages: photos are shown whole, never cropped. */
+.gallery-frame--natural{ aspect-ratio: auto; }
+.gallery-frame--natural img{
+  position: static;
+  height: auto;
+  object-fit: fill;
+}
+.gallery-frame--natural.gallery-frame--fallback{ aspect-ratio: var(--gallery-aspect); }
 .gallery-frame--clickable{ cursor: pointer; }
 .gallery-frame--clickable:hover{ opacity: 0.92; }
 .gallery-frame--clickable:focus-visible{ outline: 2px solid var(--safelight); outline-offset: 2px; }
@@ -404,6 +420,29 @@ p{ margin: 0 0 1em; max-width: var(--measure); }
 .gallery-body p:last-of-type{ margin-bottom: 0.4rem; }
 
 .gallery-more-link{ display: inline-block; margin-top: 0.3rem; }
+
+/* ---------- groups ----------
+   A group is a titled panel that spans the full row, so it reads as
+   clearly separate from neighbouring photos and from other groups. */
+
+.gallery-group{
+  grid-column: 1 / -1;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: clamp(1.25rem, 3vw, 2rem);
+  margin: clamp(0.25rem, 1vw, 0.75rem) 0;
+}
+.gallery-group-head{
+  margin-bottom: clamp(1.1rem, 2.5vw, 1.6rem);
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--ink);
+}
+.gallery-group-title{ font-size: clamp(1.4rem, 3vw, 2rem); }
+.gallery-group-head .meta{
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin: 0.45rem 0 0;
+}
 
 /* ---------- filter bar (Portfolio) ---------- */
 
@@ -535,9 +574,20 @@ p{ margin: 0 0 1em; max-width: var(--measure); }
 }
 @media (max-width: 860px){ .work-detail{ grid-template-columns: 1fr; } }
 
-.work-detail-frame img{ cursor: default; }
-
 .work-detail-body .meta{ margin-bottom: 1rem; }
+
+/* A photo that belongs to a group: title + description, then every photo. */
+.work-detail--group{ display: block; }
+.work-group-head{ max-width: 52rem; margin-bottom: clamp(1.5rem, 4vw, 2.5rem); }
+.work-group-head .meta{ margin: 0.6rem 0 1rem; }
+.work-group-photos{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1.5rem, 3vw, 2.25rem);
+  align-items: start;
+}
+@media (max-width: 700px){ .work-group-photos{ grid-template-columns: 1fr; } }
+.work-group-item{ margin: 0; }
 
 /* ---------- lightbox ---------- */
 
