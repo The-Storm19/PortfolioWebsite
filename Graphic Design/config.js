@@ -121,7 +121,7 @@ window.GRAPHIC_DESIGN_ITEMS = [
     file: "Analiese.jpg",
     name: "Screen Printing Shirt Design",
     date: "2026",
-    short: "Illustration of a young dow made out of color blocking.",
+    short: "Illustration of a young doe made out of color blocking.",
     long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
   },
   {
