@@ -123,6 +123,13 @@ window.GRAPHIC_DESIGN_ITEMS = [
     long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
   },
   {
+    file: "HardCider.png",
+    name: "Hard Cider Packaging",
+    date: "2026",
+    short: "This illustration was used for product label.",
+    long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
+  },
+  {
     group: "Senegal Village Illustrations",
     date: "2025",
     long: "The description of the whole project goes here — this is what shows up on the \"Read more\" page for every photo in this group.",
@@ -143,13 +150,6 @@ window.GRAPHIC_DESIGN_ITEMS = [
         short: "A set of illustrations used as a set to show the culture of a small village in Senegal."
       }
     ]
-  },
-  {
-    file: "HardCider.png",
-    name: "Hard Cider Packaging",
-    date: "2026",
-    short: "This illustration was used for product label.",
-    long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
   },
   {
     group: "Children's Book Covers",
