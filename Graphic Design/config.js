@@ -92,7 +92,8 @@ window.GRAPHIC_DESIGN_ITEMS = [
     name: "Hall Brawl Contest Winner",
     date: "2026",
     short: "This logo won a completion for my university Dorm sweatshirt competition.",
-    long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
+    long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work.",
+     crop: "center top"
   },
   {
     file: "V&B_Logo.png",
@@ -113,7 +114,8 @@ window.GRAPHIC_DESIGN_ITEMS = [
     name: "Fairy Dust Product Design",
     date: "2024",
     short: "Magical fairy dust product for kids tea partys that I illustrated and designed.",
-    long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
+    long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work.",
+    crop: "left center"
   },
   {
     file: "Analiese.jpg",
@@ -128,7 +130,8 @@ window.GRAPHIC_DESIGN_ITEMS = [
     date: "2026",
     short: "This illustration was used for product label.",
     long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work.",
-    crop: "center top"
+    crop: "center top",
+    zoom: .75
   },
   {
     group: "Senegal Village Illustrations",
