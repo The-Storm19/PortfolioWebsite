@@ -127,7 +127,8 @@ window.GRAPHIC_DESIGN_ITEMS = [
     name: "Hard Cider Packaging",
     date: "2026",
     short: "This illustration was used for product label.",
-    long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
+    long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work.",
+    crop: "center top"
   },
   {
     group: "Senegal Village Illustrations",
