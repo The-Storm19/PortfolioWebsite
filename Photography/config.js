@@ -100,7 +100,8 @@ window.PHOTOGRAPHY_ITEMS = [
     name: "Floating Mushroom",
     date: "2023",
     short: "Studio project that worked with capturing the beauty of nature in a studio environment.",
-    long: "Add the longer description here — this is what shows up when someone clicks \"Read more.\""
+    long: "Add the longer description here — this is what shows up when someone clicks \"Read more.\"",
+    crop: "50% 40%"
   },
   {
     file: "IMG_0084.jpg",
@@ -131,14 +132,16 @@ window.PHOTOGRAPHY_ITEMS = [
     name: "Glass study",
     date: "2026",
     short: "A studio lighting final that focused on line quality.",
-    long: "Add the longer description here — this is what shows up when someone clicks \"Read more.\""
+    long: "Add the longer description here — this is what shows up when someone clicks \"Read more.\"",
+    crop: "50% 40%"
   },
   {
     file: "IMG_7737.jpg",
     name: "Glasss with Flower",
     date: "2026",
     short: "A studio lighting final that combined glass and shadow to depict the delicate balance.",
-    long: "Add the longer description here — this is what shows up when someone clicks \"Read more.\""
+    long: "Add the longer description here — this is what shows up when someone clicks \"Read more.\"",
+    crop: "center bottom"
   },
   {
     group: "Senegal",
@@ -148,12 +151,14 @@ window.PHOTOGRAPHY_ITEMS = [
       {
         file: "IMG_5156-1-3.jpg",
         name: "Returning with Lunch",
-        short: "A girl returning to her family with their lunch in Senegal."
+        short: "A girl returning to her family with their lunch in Senegal.",
+        crop: "center top"
       },
       {
         file: "IMG_5361-1-3.jpg",
         name: "Sitting in the Waiting",
-        short: "A young boy that was waiting for his turn to see the doctor in rural Senegal."
+        short: "A young boy that was waiting for his turn to see the doctor in rural Senegal.",
+        crop: "50% 40%"
       },
       {
         file: "IMG_5724-1-3.jpg",
@@ -163,7 +168,8 @@ window.PHOTOGRAPHY_ITEMS = [
       {
         file: "IMG_5740-1-2.jpg",
         name: "Dance in the Sand",
-        short: "Senegalese boy teaching foreigners how to dance."
+        short: "Senegalese boy teaching foreigners how to dance.",
+        crop: "center top"
       }
     ]
   }
