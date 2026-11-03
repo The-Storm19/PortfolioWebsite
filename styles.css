@@ -24,7 +24,7 @@
   --line: rgba(24,25,15,0.22);
   --line-soft: rgba(24,25,15,0.12);
 
-  --font-display: Outfit;
+  --font-display: 'Young Serif', Serif;
   --font-body: Outfit;
 
 
@@ -149,7 +149,7 @@ p{ margin: 0 0 1em; max-width: var(--measure); }
 
 .primary-nav a{
   text-decoration: none;
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-weight: 600;
   font-size: 0.98rem;
   letter-spacing: 0.01em;
@@ -236,7 +236,7 @@ p{ margin: 0 0 1em; max-width: var(--measure); }
 
 .btn{
   display: inline-block;
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-weight: thin;
   font-size: 1rem;
   letter-spacing: 0.01em;
@@ -259,7 +259,7 @@ p{ margin: 0 0 1em; max-width: var(--measure); }
 }
 
 .text-link{
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-weight: thin;
   text-decoration: none;
   border-bottom: 1px solid var(--ink);
