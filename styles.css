@@ -7,6 +7,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap');
 
+@font-face{
+  font-family: Outfit;
+  src: url(Outfit-VariableFont_wght.ttf)
+}
+
 :root{
   --paper: #F1E0D4;
   --paper-dim: #fffaf3;
@@ -19,8 +24,9 @@
   --line: rgba(24,25,15,0.22);
   --line-soft: rgba(24,25,15,0.12);
 
-  --font-display: "Young Serif", serif;
-  --font-body: "Bitter", serif;
+  --font-display: Outfit;
+  --font-body: Outfit;
+
 
   /* The one standard frame every thumbnail is drawn in. Change this single
      value to reshape all of them (e.g. 1 / 1 for square, 4 / 5 for tall).
@@ -231,7 +237,7 @@ p{ margin: 0 0 1em; max-width: var(--measure); }
 .btn{
   display: inline-block;
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: thin;
   font-size: 1rem;
   letter-spacing: 0.01em;
   text-decoration: none;
@@ -254,7 +260,7 @@ p{ margin: 0 0 1em; max-width: var(--measure); }
 
 .text-link{
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: thin;
   text-decoration: none;
   border-bottom: 1px solid var(--ink);
   padding-bottom: 0.1em;
@@ -454,7 +460,7 @@ p{ margin: 0 0 1em; max-width: var(--measure); }
 }
 .filter-bar button{
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: thin;
   font-size: 0.95rem;
   background: transparent;
   border: 1px solid var(--ink);
@@ -534,7 +540,7 @@ p{ margin: 0 0 1em; max-width: var(--measure); }
 .field label{
   display: block;
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: thin;
   font-size: 0.92rem;
   margin-bottom: 0.4rem;
 }
