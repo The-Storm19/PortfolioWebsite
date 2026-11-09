@@ -87,8 +87,18 @@
    ========================================================================= */
 
 window.GRAPHIC_DESIGN_ITEMS = [
-  {
-    file: "LAMBEIN_Competition.PNG",
+
+ {
+    file: "HardCider_Mockup@0.25x.jpg",
+    name: "Hard Cider Packaging",
+    date: "2026",
+    short: "This illustration was used for product label.",
+    long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work.",
+    crop: "center top",
+    zoom: .75
+  },
+ {
+    file: "Lambein-Sweatshirt@0.25x.jpg",
     name: "Hall Brawl Contest Winner",
     date: "2026",
     short: "This logo won a completion for my university Dorm sweatshirt competition.",
@@ -96,7 +106,7 @@ window.GRAPHIC_DESIGN_ITEMS = [
      crop: "center top"
   },
   {
-    file: "V&B_Logo.png",
+    file: "ProductReplacement@0.25x.jpg",
     name: "Vine and Branches Logo",
     date: "2026",
     short: "A logo for a young adults group called Vine and Branches.",
@@ -110,7 +120,7 @@ window.GRAPHIC_DESIGN_ITEMS = [
     long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
   },
   {
-    file: "Fairy Dust-Lable.jpg",
+    file: "FairyDust_GD2.jpeg",
     name: "Fairy Dust Product Design",
     date: "2024",
     short: "Magical fairy dust product for kids tea partys that I illustrated and designed.",
@@ -123,15 +133,6 @@ window.GRAPHIC_DESIGN_ITEMS = [
     date: "2026",
     short: "Illustration of a young doe made out of color blocking.",
     long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
-  },
-  {
-    file: "HardCider.png",
-    name: "Hard Cider Packaging",
-    date: "2026",
-    short: "This illustration was used for product label.",
-    long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work.",
-    crop: "center top",
-    zoom: .75
   },
   {
     group: "Senegal Village Illustrations",
