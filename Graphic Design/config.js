@@ -107,7 +107,7 @@ window.GRAPHIC_DESIGN_ITEMS = [
     name: "Hard Cider Packaging",
     date: "2026",
     short: "This illustration was used for product label.",
-    long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work.",
+    long: "Product label design for a brewer that made small-batch, handcrafted wine and hard cider. The customer wanted an illustrated character inspired by an Irish____ — and shillelagh walking sticks. One hand holding one that looks like a stick of clove and the other hand holding a stick of cinnamon. They wanted a vintage and elegant feel to the design.",
     crop: "center top",
     zoom: .75
   },
@@ -116,7 +116,7 @@ window.GRAPHIC_DESIGN_ITEMS = [
     name: "Hall Brawl Contest Winner",
     date: "2026",
     short: "This logo won a completion for my university Dorm sweatshirt competition.",
-    long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work.",
+    long: "The sweatshirt design was inspired by the unique building architecture of Lambein residence hall, while taking a minimalist approach to create wearable college attire. The design won the Hall Brawl Contest and was produced into sweatshirts sold on the campus. In the end, this design won but was changed to add a bible verse. Therefore, the font is not the same as had originally been envisioned.",
      crop: "center top"
   },
   {
@@ -124,37 +124,54 @@ window.GRAPHIC_DESIGN_ITEMS = [
     name: "Vine and Branches Logo",
     date: "2026",
     short: "A logo for a young adults group called Vine and Branches.",
-    long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
+    long: "This logo was redesigned for a church young adult group. The client requested that it include the letters V and B. The sideways oval represents a crown, while the cross replaced the “and” symbol, both representing Christian faith. Multiple iterations were created to achieve a final, successful product."
   },
   {
-    file: "logo-Black.png",
+    group: "Children's Book Covers",
+    date: "2025",
+    long: "During my internship with Masthof Press, this was a collaboration with the authors of the book to design the layout and cover.",
+    photos: [
+      {
+        file: "Book1_Mockup0.25x.jpg",
+        name: "Children's Book Cover Design",
+        short: "A childrens book designed while working for Masthof Press."
+      },
+      {
+        file: "Book2_Mockup0.25x.jpg",
+        name: "Children's Book Cover Design",
+        short: "A childrens book designed while working for Masthof Press."
+      }
+    ]
+  }
+],
+  {
+    file: "SchreierBusinessCard_Mockup@0.25x.jpg",
     name: "Small Business Branding",
     date: "2025",
-    short: "A logo designed for a private company.",
-    long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
+    short: "A logo designed for a Family Business.",
+    long: "Designed a Logo and branding package for an LLC contracting business based on the customer's initial needs and feedback."
   },
   {
-    file: "FairyDust_GD2.jpeg",
-    name: "Fairy Dust Product Design",
-    date: "2024",
-    short: "Magical fairy dust product for kids tea partys that I illustrated and designed.",
-    long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work.",
-    crop: "left center"
+    file: "Free_Keychain_Mockup_3@0.25x.jpg",
+    name: "Event Competition Logo Design",
+    date: "2025",
+    short: "Runner up in Logo completion.",
+    long: "This design was selected as a runner-up in a logo competition for the Schuylkill River Sojourn for the summer of 2025. The famous Peacock Bridge located on the river and a kayak paddle were chosen as symbols to represent and commemorate the event."
   },
   {
-    file: "Analiese.jpg",
+    file: "Free_Toiletry_Bag_Mockup@0.25x.jpg",
     name: "Screen Printing Shirt Design",
     date: "2026",
     short: "Illustration of a young doe made out of color blocking.",
-    long: "The fuller description goes here — this is what shows up when someone clicks \"Read more.\" Delete this example once you've added your own work."
+    long: "Used blocks of pure color to depict a deer in a field of flowers."
   },
   {
     group: "Senegal Village Illustrations",
     date: "2025",
-    long: "The description of the whole project goes here — this is what shows up on the \"Read more\" page for every photo in this group.",
+    long: "This flyer was influenced by time abroad in Africa and pulls inspiration from traditional African art style, which is especially noticeable in the pattern of her dresses. These illustrations are meant to show the joy and simplicity of life that a Senegalese woman experiences daily.",
     photos: [
       {
-        file: "Final.jpg",
+        file: "African_Falyer_Mockup@0.5x.jpg",
         name: "Narrative-Driven Imagery for Flyer",
         short: "A set of illustrations used as a set to show the culture of a small village in Senegal."
       },
@@ -169,22 +186,4 @@ window.GRAPHIC_DESIGN_ITEMS = [
         short: "A set of illustrations used as a set to show the culture of a small village in Senegal."
       }
     ]
-  },
-  {
-    group: "Children's Book Covers",
-    date: "2025",
-    long: "The description of the whole project goes here — this is what shows up on the \"Read more\" page for every photo in this group.",
-    photos: [
-      {
-        file: "Book1_Mockup0.25x.jpg",
-        name: "Children's Book Cover Design",
-        short: "A childrens book designed while working for Masthof Press."
-      },
-      {
-        file: "Book2_Mockup0.25x.jpg",
-        name: "Children's Book Cover Design",
-        short: "A childrens book designed while working for Masthof Press."
-      }
-    ]
-  }
-];
+  };
