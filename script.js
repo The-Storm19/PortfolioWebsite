@@ -499,6 +499,37 @@ function renderWorkGroup(container, folder, group) {
   container.appendChild(grid);
 }
 
+// Sends the "Back" link on the work page to where the visitor came from.
+// If they arrived from another page of this site, the link goes back one
+// step in their history (which also restores their scroll position).
+// Otherwise (opened directly, or from outside the site) it falls back to
+// the gallery page the project belongs to.
+function setupWorkBackLink(folder) {
+  var link = document.getElementById('work-back-link');
+  if (!link) return;
+
+  var fallbacks = {
+    'Graphic Design': 'graphic-design.html',
+    'Photography': 'photographic-design.html'
+  };
+  if (fallbacks[folder]) link.href = fallbacks[folder];
+
+  var cameFromSite = false;
+  try {
+    var ref = document.referrer ? new URL(document.referrer) : null;
+    cameFromSite = !!ref &&
+      ref.origin === window.location.origin &&
+      !/work\.html$/.test(ref.pathname);
+  } catch (e) {}
+
+  if (cameFromSite && window.history.length > 1) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.history.back();
+    });
+  }
+}
+
 function renderWorkDetail() {
   var container = document.getElementById('work-detail');
   if (!container) return;
@@ -506,6 +537,8 @@ function renderWorkDetail() {
   var params = new URLSearchParams(window.location.search);
   var folder = params.get('folder') || '';
   var file = params.get('file') || '';
+
+  setupWorkBackLink(folder);
 
   var sources = {
     'Graphic Design': window.GRAPHIC_DESIGN_ITEMS || [],
