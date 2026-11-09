@@ -143,7 +143,16 @@ function buildGalleryGroup(group, folder, startIndex, options) {
   if (options.type) section.setAttribute('data-type', options.type);
   if (group.group) section.setAttribute('aria-label', group.group);
 
-  if (group.group || group.date) {
+  // One "Read more" link per group, pointing at the group's project page.
+  // (Any photo in the group opens the same page, so the first one is used.)
+  var firstFile = '';
+  group.photos.some(function (p) {
+    if (p && p.file) { firstFile = p.file; return true; }
+    return false;
+  });
+  var hasMore = !!firstFile && !!(group.long || group.spotlight);
+
+  if (group.group || group.date || hasMore) {
     var head = document.createElement('div');
     head.className = 'gallery-group-head';
 
@@ -161,15 +170,23 @@ function buildGalleryGroup(group, folder, startIndex, options) {
       head.appendChild(meta);
     }
 
+    if (hasMore) {
+      var moreLink = document.createElement('a');
+      moreLink.className = 'text-link gallery-more-link';
+      moreLink.href = 'work.html?folder=' + encodeURIComponent(folder) + '&file=' + encodeURIComponent(firstFile);
+      moreLink.textContent = 'Read more';
+      head.appendChild(moreLink);
+    }
+
     section.appendChild(head);
   }
 
   var grid = document.createElement('div');
   grid.className = 'gallery-grid';
   group.photos.forEach(function (photo, i) {
-    // Every photo in a group links to the same project page, which
-    // shows the group's single long description.
-    grid.appendChild(buildGalleryCard(photo, folder, startIndex + i, options, !!group.long));
+    // The group shows one "Read more" link in its header, so the
+    // individual photo cards don't get their own.
+    grid.appendChild(buildGalleryCard(photo, folder, startIndex + i, options, false));
   });
   section.appendChild(grid);
 
@@ -437,19 +454,27 @@ function renderWorkGroup(container, folder, group) {
   var grid = document.createElement('div');
   grid.className = 'work-group-photos';
 
+  // Optional "project spotlight" (spotlight: true in config.js): the first
+  // photo listed is shown larger, with a bigger title, ahead of the rest.
+  var spotlightOn = !!group.spotlight;
+  var shown = 0;
+
   group.photos.forEach(function (photo) {
     if (!photo.file) return;
 
+    var isSpotlight = spotlightOn && shown === 0;
+    shown += 1;
+
     var figure = document.createElement('figure');
-    figure.className = 'work-group-item';
-    figure.appendChild(buildWorkPhotoFrame(folder, photo, true));
+    figure.className = 'work-group-item' + (isSpotlight ? ' work-group-item--spotlight' : '');
+    figure.appendChild(buildWorkPhotoFrame(folder, photo, !isSpotlight));
 
     var caption = document.createElement('figcaption');
     caption.className = 'gallery-body';
 
     if (photo.name) {
-      var name = document.createElement('h3');
-      name.className = 'h-card';
+      var name = document.createElement(isSpotlight ? 'h2' : 'h3');
+      name.className = isSpotlight ? 'h-section' : 'h-card';
       name.textContent = photo.name;
       caption.appendChild(name);
     }
@@ -474,6 +499,37 @@ function renderWorkGroup(container, folder, group) {
   container.appendChild(grid);
 }
 
+// Sends the "Back" link on the work page to where the visitor came from.
+// If they arrived from another page of this site, the link goes back one
+// step in their history (which also restores their scroll position).
+// Otherwise (opened directly, or from outside the site) it falls back to
+// the gallery page the project belongs to.
+function setupWorkBackLink(folder) {
+  var link = document.getElementById('work-back-link');
+  if (!link) return;
+
+  var fallbacks = {
+    'Graphic Design': 'graphic-design.html',
+    'Photography': 'photographic-design.html'
+  };
+  if (fallbacks[folder]) link.href = fallbacks[folder];
+
+  var cameFromSite = false;
+  try {
+    var ref = document.referrer ? new URL(document.referrer) : null;
+    cameFromSite = !!ref &&
+      ref.origin === window.location.origin &&
+      !/work\.html$/.test(ref.pathname);
+  } catch (e) {}
+
+  if (cameFromSite && window.history.length > 1) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.history.back();
+    });
+  }
+}
+
 function renderWorkDetail() {
   var container = document.getElementById('work-detail');
   if (!container) return;
@@ -481,6 +537,8 @@ function renderWorkDetail() {
   var params = new URLSearchParams(window.location.search);
   var folder = params.get('folder') || '';
   var file = params.get('file') || '';
+
+  setupWorkBackLink(folder);
 
   var sources = {
     'Graphic Design': window.GRAPHIC_DESIGN_ITEMS || [],
