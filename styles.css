@@ -595,6 +595,17 @@ p{ margin: 0 0 1em; max-width: var(--measure); }
 @media (max-width: 700px){ .work-group-photos{ grid-template-columns: 1fr; } }
 .work-group-item{ margin: 0; }
 
+/* Project spotlight (spotlight: true on a group in config.js): the first
+   photo spans the full row, laid out like a single-photo detail page. */
+.work-group-item--spotlight{
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+@media (max-width: 860px){ .work-group-item--spotlight{ grid-template-columns: 1fr; } }
+
 /* ---------- lightbox ---------- */
 
 .lightbox-overlay{

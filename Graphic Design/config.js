@@ -53,6 +53,20 @@
                have their own "long")
         photos the photos in the group. Each needs file, name, and short
                (and can have its own date if you like).
+        spotlight  (optional) set to true to feature the group's first
+               photo on the "Read more" page: it is shown larger, with
+               a bigger title, ahead of the other photos. Leave it out
+               (or set it to false) for the standard layout. Example:
+
+                 {
+                   group: "Series title",
+                   spotlight: true,
+                   long: "...",
+                   photos: [ ... ]
+                 },
+
+   A group shows a single "Read more" link (under its title) that opens
+   its project page. Individual photos in a group have no link of their own.
 
    To take a photo out of a group, move its { ... }, block out of the
    photos [ ] list and paste it among the other single photos.
