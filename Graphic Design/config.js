@@ -185,4 +185,5 @@ window.GRAPHIC_DESIGN_ITEMS = [
         short: "A set of illustrations used as a set to show the culture of a small village in Senegal."
       }
     ]
-  };
+  }
+];
