@@ -107,7 +107,7 @@ window.GRAPHIC_DESIGN_ITEMS = [
     name: "Hard Cider Packaging",
     date: "2026",
     short: "This illustration was used for product label.",
-    long: "Product label design for a brewer that made small-batch, handcrafted wine and hard cider. The customer wanted an illustrated character inspired by an Irish____ — and shillelagh walking sticks. One hand holding one that looks like a stick of clove and the other hand holding a stick of cinnamon. They wanted a vintage and elegant feel to the design.",
+    long: "Product label design for a brewer that made small-batch, handcrafted wine and hard cider. The customer wanted an illustrated character inspired by a Mari Lwyd and shillelagh walking stick. One hand is holding a stick that looks like a clove, and the other hand is holding a stick of cinnamon. The customer wanted a vintage, elegant feel for the design.",
     crop: "center top",
     zoom: .75
   },
@@ -134,16 +134,15 @@ window.GRAPHIC_DESIGN_ITEMS = [
       {
         file: "Book1_Mockup0.25x.jpg",
         name: "Children's Book Cover Design",
-        short: "A childrens book designed while working for Masthof Press."
+        short: "A children's book designed while working for Masthof Press."
       },
       {
         file: "Book2_Mockup0.25x.jpg",
         name: "Children's Book Cover Design",
-        short: "A childrens book designed while working for Masthof Press."
+        short: "A children's book designed while working for Masthof Press."
       }
     ]
-  }
-],
+  },
   {
     file: "SchreierBusinessCard_Mockup@0.25x.jpg",
     name: "Small Business Branding",
