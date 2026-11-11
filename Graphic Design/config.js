@@ -170,7 +170,7 @@ window.GRAPHIC_DESIGN_ITEMS = [
     long: "This flyer was influenced by time abroad in Africa and pulls inspiration from traditional African art style, which is especially noticeable in the pattern of her dresses. These illustrations are meant to show the joy and simplicity of life that a Senegalese woman experiences daily.",
     photos: [
       {
-        file: "African_Falyer_Mockup@0.5x.jpg",
+        file: "African_Flyer_Mockup@0.5x.jpg",
         name: "Narrative-Driven Imagery for Flyer",
         short: "A set of illustrations used as a set to show the culture of a small village in Senegal."
       },
