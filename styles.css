@@ -295,7 +295,7 @@ p{ margin: 0 0 1em; max-width: var(--measure); }
 
 /* ---------- hero slideshow (Home) ----------
    A static logo/wordmark sits centered over a set of photos that
-   slowly cross-fade behind it, pulled from photos/config.js. */
+   scroll past in a collage behind it, pulled from photos/config.js. */
 
 .hero-slideshow{
   position: relative;
@@ -308,15 +308,43 @@ p{ margin: 0 0 1em; max-width: var(--measure); }
   background: var(--ink); /* shows while photos load, or if none load */
 }
 
-.hero-slide{
+/* Collage: horizontal strips of photos drifting past (see script.js).
+   The number of strips and their speed are set from script.js to suit
+   the screen. */
+.hero-collage{
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transition: opacity 1.8s ease;
+  display: flex;
+  flex-direction: column;
+  gap: var(--hero-gap, 6px);
 }
-.hero-slide.is-active{ opacity: 1; }
+.hero-row{
+  flex: 1 1 0;
+  min-height: 0;
+  overflow: hidden;
+}
+.hero-track{
+  display: flex;
+  height: 100%;
+  width: max-content;
+  animation: hero-scroll 60s linear infinite;
+  will-change: transform;
+}
+.hero-track img{
+  height: 100%;
+  width: auto;
+  max-width: none;
+  flex: none;
+  margin-right: var(--hero-gap, 6px);
+}
+.hero-row--reverse .hero-track{ animation-direction: reverse; }
+
+@keyframes hero-scroll{
+  to{ transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce){
+  .hero-track{ animation: none; }
+}
 
 .hero-slideshow::after{
   content: "";

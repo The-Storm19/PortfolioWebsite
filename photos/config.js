@@ -13,8 +13,8 @@
    2. Add its file name (with extension) to the list below.
    3. Save this file and refresh the website.
 
-   Wide, high-resolution photos work best, since they fill the full width
-   of the screen. To remove a photo, delete its line. To reorder them,
+   High-resolution photos of any shape work best. They're shown whole
+   (never cropped) and scale to fit the screen. To remove a photo, delete its line. To reorder them,
    reorder the lines. If a listed file can't be found, it's simply
    skipped — the slideshow just uses whatever does load.
 

@@ -282,16 +282,131 @@ function closeLightbox() {
 }
 
 // ---------------------------------------------------------------------
-// Home hero slideshow
+// Home hero collage
 //
-// Cross-fades through the photos listed in photos/config.js behind the
-// static logo on the home page. Each photo is preloaded first, so a
-// missing or misspelled file is quietly skipped rather than flashing a
-// broken image.
+// Scrolls the photos listed in photos/config.js past, behind the static
+// logo on the home page, as a collage of horizontal strips. Every photo
+// is shown whole (never cropped) at its own proportions.
+//
+// The layout adapts to the screen: wide screens get fewer, taller strips
+// and phones get more, shorter ones, so photos stay a comfortable size
+// and a good number of them are visible side by side. It re-plans itself
+// when the window is resized or the phone is rotated.
+//
+// Each photo is preloaded first (its proportions are needed for the
+// layout), so a missing or misspelled file is quietly skipped.
 // ---------------------------------------------------------------------
 
-// This variable sets the time each photo stays on screen on the home page before fading to the next photo
-var hangTime = 5000;
+// How fast the collage drifts, in pixels per second. Lower = slower.
+// (Strips move at slightly different speeds around this value.)
+var heroSpeed = 30;
+
+// Space between photos, in pixels.
+var heroGap = 6;
+
+// Chooses how many strips fit best: aim for strips about 22% as tall as
+// the screen is wide, kept between 180px and 300px.
+function pickHeroRows(width, height, photoCount) {
+  var target = Math.min(300, Math.max(180, width * 0.22));
+  var rows = Math.round(height / target);
+  return Math.max(1, Math.min(rows, 5, photoCount));
+}
+
+// Plans each strip: which photos it holds (every photo, starting from a
+// different one in each strip so neighbours differ), repeated until the
+// strip is comfortably wider than the screen, plus its speed and direction.
+function planHeroRows(photos, rows, width, height) {
+  var rowH = (height - (rows - 1) * heroGap) / rows;
+  var plan = [];
+
+  for (var r = 0; r < rows; r++) {
+    var start = Math.round(r * photos.length / rows);
+    var seq = [];
+    var span = 0;
+    var i = 0;
+
+    do {
+      var p = photos[(start + i) % photos.length];
+      seq.push(p);
+      span += rowH * p.ratio + heroGap;
+      i += 1;
+    } while (i % photos.length !== 0 || span * 0.8 < width);
+
+    var speed = heroSpeed * (1 + 0.12 * (r % 3)) * (width < 600 ? 0.8 : 1);
+    var dur = span / speed;
+
+    plan.push({
+      photos: seq,
+      duration: dur,
+      delay: -dur * ((r * 0.37) % 1),
+      reverse: r % 2 === 1
+    });
+  }
+
+  return plan;
+}
+
+function renderHeroCollage(slideshow, collage, photos) {
+  var width = slideshow.clientWidth;
+  var height = slideshow.clientHeight;
+  var rows = pickHeroRows(width, height, photos.length);
+  var plan = planHeroRows(photos, rows, width, height);
+
+  collage.textContent = '';
+  collage.style.setProperty('--hero-gap', heroGap + 'px');
+
+  plan.forEach(function (row) {
+    var rowEl = document.createElement('div');
+    rowEl.className = 'hero-row' + (row.reverse ? ' hero-row--reverse' : '');
+
+    var track = document.createElement('div');
+    track.className = 'hero-track';
+    track.style.animationDuration = row.duration.toFixed(2) + 's';
+    track.style.animationDelay = row.delay.toFixed(2) + 's';
+
+    // Two identical copies side by side, so the loop is seamless.
+    for (var copy = 0; copy < 2; copy++) {
+      row.photos.forEach(function (photo) {
+        var img = document.createElement('img');
+        img.src = photo.src;
+        img.alt = '';
+        img.draggable = false;
+        img.style.aspectRatio = String(photo.ratio);
+        track.appendChild(img);
+      });
+    }
+
+    rowEl.appendChild(track);
+    collage.appendChild(rowEl);
+  });
+
+  return { rows: rows, width: width };
+}
+
+function startHeroCollage(slideshow, photos) {
+  if (!photos.length) return;
+
+  var collage = document.createElement('div');
+  collage.className = 'hero-collage';
+  collage.setAttribute('aria-hidden', 'true');
+  slideshow.insertBefore(collage, slideshow.firstChild);
+
+  var state = renderHeroCollage(slideshow, collage, photos);
+
+  // Re-plan on resize / rotation. Height-only changes (e.g. a phone's
+  // address bar sliding away) are ignored so the collage doesn't restart.
+  var timer = null;
+  window.addEventListener('resize', function () {
+    clearTimeout(timer);
+    timer = setTimeout(function () {
+      var width = slideshow.clientWidth;
+      var rows = pickHeroRows(width, slideshow.clientHeight, photos.length);
+      if (rows !== state.rows || width !== state.width) {
+        state = renderHeroCollage(slideshow, collage, photos);
+      }
+    }, 200);
+  });
+}
 
 document.addEventListener('DOMContentLoaded', function () {
   var slideshow = document.querySelector('.hero-slideshow');
@@ -300,42 +415,31 @@ document.addEventListener('DOMContentLoaded', function () {
   var files = (window.HERO_PHOTOS || []).slice(0, 10);
   if (!files.length) return;
 
-  var loaded = [];
+  var results = new Array(files.length);
   var remaining = files.length;
 
-  files.forEach(function (file) {
+  files.forEach(function (file, i) {
     var probe = new Image();
-    probe.onload = function () { loaded.push(file); settle(); };
+    probe.onload = function () {
+      if (probe.naturalWidth && probe.naturalHeight) {
+        results[i] = {
+          src: probe.src,
+          ratio: probe.naturalWidth / probe.naturalHeight
+        };
+      }
+      settle();
+    };
     probe.onerror = function () { settle(); };
     probe.src = encodeURI('photos/' + file);
   });
 
   function settle() {
     remaining -= 1;
-    if (remaining === 0) startHeroSlideshow(slideshow, loaded);
+    if (remaining === 0) {
+      startHeroCollage(slideshow, results.filter(Boolean));
+    }
   }
 });
-
-function startHeroSlideshow(slideshow, files) {
-  if (!files.length) return;
-
-  files.forEach(function (file, i) {
-    var slide = document.createElement('div');
-    slide.className = 'hero-slide' + (i === 0 ? ' is-active' : '');
-    slide.style.backgroundImage = 'url("' + encodeURI('photos/' + file) + '")';
-    slideshow.insertBefore(slide, slideshow.firstChild);
-  });
-
-  if (files.length < 2) return;
-
-  var slides = slideshow.querySelectorAll('.hero-slide');
-  var current = 0;
-  setInterval(function () {
-    slides[current].classList.remove('is-active');
-    current = (current + 1) % slides.length;
-    slides[current].classList.add('is-active');
-  }, hangTime);
-}
 
 // ---------------------------------------------------------------------
 // Work detail page (work.html)
