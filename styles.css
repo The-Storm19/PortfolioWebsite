@@ -96,6 +96,7 @@ p{ margin: 0 0 1em; max-width: var(--measure); }
 
 .site-header{
   position: relative;
+  z-index: 100;
   border-bottom: 1px solid var(--line);
   background: var(--paper);
 }
@@ -309,18 +310,17 @@ p{ margin: 0 0 1em; max-width: var(--measure); }
 }
 
 /* Collage: horizontal strips of photos drifting past (see script.js).
-   The number of strips and their speed are set from script.js to suit
-   the screen. */
+   Strip sizes, count and speed are set from script.js to suit the screen. */
 .hero-collage{
   position: absolute;
   inset: 0;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: var(--hero-gap, 6px);
 }
 .hero-row{
-  flex: 1 1 0;
-  min-height: 0;
+  flex: none;
   overflow: hidden;
 }
 .hero-track{
@@ -331,16 +331,15 @@ p{ margin: 0 0 1em; max-width: var(--measure); }
   will-change: transform;
 }
 .hero-track img{
-  height: 100%;
-  width: auto;
-  max-width: none;
+  display: block;
   flex: none;
+  max-width: none;
   margin-right: var(--hero-gap, 6px);
 }
 .hero-row--reverse .hero-track{ animation-direction: reverse; }
 
 @keyframes hero-scroll{
-  to{ transform: translateX(-50%); }
+  to{ transform: translate3d(-50%, 0, 0); }
 }
 @media (prefers-reduced-motion: reduce){
   .hero-track{ animation: none; }
@@ -385,6 +384,24 @@ p{ margin: 0 0 1em; max-width: var(--measure); }
   border-bottom-color: var(--paper);
 }
 .hero-more-link:hover{ color: var(--stop); border-bottom-color: var(--stop); }
+
+/* Soft shadow behind the wordmark and "More about me" so they stay
+   readable over the photo collage. */
+.hero-logo::before{
+  content: "";
+  position: absolute;
+  inset: -2.5rem -3rem;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center,
+    rgba(24,25,15,0.7) 0%,
+    rgba(24,25,15,0.45) 40%,
+    rgba(24,25,15,0) 72%);
+}
+.hero-wordmark,
+.hero-more-link{
+  text-shadow: 0 1px 3px rgba(24,25,15,0.6), 0 2px 18px rgba(24,25,15,0.55);
+}
 
 /* ---------- section heading pattern ---------- */
 

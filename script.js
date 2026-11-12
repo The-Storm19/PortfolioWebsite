@@ -336,6 +336,7 @@ function planHeroRows(photos, rows, width, height) {
     var dur = span / speed;
 
     plan.push({
+      rowHeight: rowH,
       photos: seq,
       duration: dur,
       delay: -dur * ((r * 0.37) % 1),
@@ -358,6 +359,9 @@ function renderHeroCollage(slideshow, collage, photos) {
   plan.forEach(function (row) {
     var rowEl = document.createElement('div');
     rowEl.className = 'hero-row' + (row.reverse ? ' hero-row--reverse' : '');
+    // Explicit pixel sizes (rather than percentages) so every mobile
+    // browser lays the strips out the same way.
+    rowEl.style.height = row.rowHeight + 'px';
 
     var track = document.createElement('div');
     track.className = 'hero-track';
@@ -371,7 +375,8 @@ function renderHeroCollage(slideshow, collage, photos) {
         img.src = photo.src;
         img.alt = '';
         img.draggable = false;
-        img.style.aspectRatio = String(photo.ratio);
+        img.style.height = row.rowHeight + 'px';
+        img.style.width = (row.rowHeight * photo.ratio) + 'px';
         track.appendChild(img);
       });
     }
@@ -380,7 +385,7 @@ function renderHeroCollage(slideshow, collage, photos) {
     collage.appendChild(rowEl);
   });
 
-  return { rows: rows, width: width };
+  return { rows: rows, width: width, height: height };
 }
 
 function startHeroCollage(slideshow, photos) {
@@ -393,15 +398,17 @@ function startHeroCollage(slideshow, photos) {
 
   var state = renderHeroCollage(slideshow, collage, photos);
 
-  // Re-plan on resize / rotation. Height-only changes (e.g. a phone's
+  // Re-plan on resize / rotation. Small height-only changes (e.g. a phone's
   // address bar sliding away) are ignored so the collage doesn't restart.
   var timer = null;
   window.addEventListener('resize', function () {
     clearTimeout(timer);
     timer = setTimeout(function () {
       var width = slideshow.clientWidth;
-      var rows = pickHeroRows(width, slideshow.clientHeight, photos.length);
-      if (rows !== state.rows || width !== state.width) {
+      var height = slideshow.clientHeight;
+      var rows = pickHeroRows(width, height, photos.length);
+      var heightShift = Math.abs(height - state.height) / state.height;
+      if (rows !== state.rows || width !== state.width || heightShift > 0.15) {
         state = renderHeroCollage(slideshow, collage, photos);
       }
     }, 200);
