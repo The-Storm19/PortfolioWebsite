@@ -1,11 +1,10 @@
 # PortfolioWebsite
+to add content to this site, put image data in the appropriate folder and edit the appropriate config.js
+- to add content to the 'Photography' page, add .jpgs or .pngs the `PortfilioWebsite/Photography` folder
+  - edit `PortfolioWebsite/Photography/config.js` to include the photo. Photos sill be shown in the order they are put in the config.js
+- to add content to the 'Graphic Design' page, add .jpgs or .pngs the `PortfilioWebsite/Graphic Design` folder
+  - edit `PortfolioWebsite/Photography/config.js` to include the photo.
+- to add content to the landing page, add .jpgs or .pngs the `PortfilioWebsite/photos` folder
+  - edit `PortfolioWebsite/Photography/config.js` to include the photo.
 
-To preview website, click the green "Code" button on the main page and select "Download .ZIP".
-
-Once the download is complete, unzip the file to the folder you want to keep it on your computer.
-
-To open the website, go into the unzipped folder and click on "index.html".
-
-The website should open in your default web browser. If it does not, right click "index.html", select "open with..." and select the browser in which you want to open the page.
-
-NOTE: the website may not load correctly in certain web browsers. It does not load correctly on my versions of Brave and Mozilla Firefox. Safari may work better.
+each config.js contains instructions for how to format the photo data and what options you have for displaying it
